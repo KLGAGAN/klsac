@@ -1,165 +1,172 @@
-# Updated HTML content with navigation, better layout, and fixed structure
-updated_html_content = """<!DOCTYPE html>
+# Let's prepare an updated HTML page that includes:
+# - Working navigation buttons
+# - Populated sections with realistic placeholder content
+# - A new feature: hash checker (SHA-256 for simplicity) using JavaScript
+
+updated_html_with_hash_checker = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KL University - Cyber Security Club</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyber Security Club | KL University</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      color: #222;
+      font-family: Arial, sans-serif;
       line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #001f3f;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
     }
     nav {
-      background-color: #0a192f;
-      color: white;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav h1 {
-      font-size: 1.5rem;
+      justify-content: center;
+      background-color: #0074D9;
     }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1rem;
+      padding: 10px;
+    }
+    nav ul li {
+      margin: 0 15px;
     }
     nav ul li a {
-      color: #64ffda;
+      color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    header {
-      background-color: #0a192f;
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    header h2 {
-      font-size: 2.5rem;
+    nav ul li a:hover {
+      text-decoration: underline;
     }
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
+      padding: 40px 20px;
+      max-width: 1000px;
       margin: auto;
     }
     h2 {
-      font-size: 2rem;
-      color: #0a192f;
-      margin-bottom: 20px;
+      color: #001f3f;
+      margin-bottom: 15px;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
+    .hash-checker {
+      margin-top: 20px;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .hash-checker input, .hash-checker button {
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 10px;
+      width: 100%;
+    }
+    .result {
+      margin-top: 15px;
+      word-break: break-all;
     }
     footer {
-      background-color: #0a192f;
-      color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
-    }
-    a {
-      color: #64ffda;
-      text-decoration: none;
+      background-color: #001f3f;
+      color: white;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <h1>KL SAC</h1>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<header>
+  <h1>Cyber Security Club - KL University</h1>
+  <p>Secure. Educate. Empower.</p>
+</header>
 
-  <header>
-    <h2>Cyber Security Club</h2>
-    <p>Empowering students with skills in ethical hacking, digital defense, and cyber awareness.</p>
-  </header>
+<nav>
+  <ul>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#hash">Hash Tool</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <section id="about">
-    <h2>About the Club</h2>
-    <p>The Cyber Security Club at KL University is dedicated to promoting knowledge and awareness around cybersecurity. Our activities include hands-on workshops, Capture the Flag (CTF) competitions, and industry guest talks to help students gain real-world skills.</p>
-  </section>
+<section id="about">
+  <h2>About Us</h2>
+  <p>The Cyber Security Club of KL University is a student-driven initiative aimed at spreading awareness and developing skills related to cyber security. We conduct regular workshops, host Capture The Flag (CTF) competitions, and invite industry experts for talks to help students build their knowledge in ethical hacking, digital forensics, and network defense.</p>
+</section>
 
-  <section id="events">
-    <h2>Upcoming Events</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>CyberX CTF Challenge</h3>
-        <p><strong>Date:</strong> April 15, 2025</p>
-        <p>Join our flagship event and put your ethical hacking skills to the test.</p>
-      </div>
-      <div class="card">
-        <h3>Guest Talk: Ethical Hacking</h3>
-        <p><strong>Date:</strong> April 22, 2025</p>
-        <p>A session with top professionals from the cybersecurity industry.</p>
-      </div>
-    </div>
-  </section>
+<section id="events">
+  <h2>Events</h2>
+  <ul>
+    <li><strong>CTF Showdown 2025</strong> – Compete with the best and solve real-world security challenges. (May 2025)</li>
+    <li><strong>Ethical Hacking Bootcamp</strong> – Hands-on training sessions with tools like Burp Suite, Nmap, and Wireshark. (June 2025)</li>
+    <li><strong>Women in Cyber Panel</strong> – Celebrate diversity and learn from women leaders in cyber security. (July 2025)</li>
+  </ul>
+</section>
 
-  <section id="team">
-    <h2>Meet the Team</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Arjun Reddy</h3>
-        <p>President</p>
-      </div>
-      <div class="card">
-        <h3>Nikita Sharma</h3>
-        <p>Vice President</p>
-      </div>
-      <div class="card">
-        <h3>Rahul Mehta</h3>
-        <p>Event Coordinator</p>
-      </div>
-    </div>
-  </section>
+<section id="resources">
+  <h2>Resources</h2>
+  <p>Explore curated resources to kickstart or enhance your cybersecurity journey:</p>
+  <ul>
+    <li><a href="https://owasp.org" target="_blank">OWASP - Top 10 Security Risks</a></li>
+    <li><a href="https://www.cybrary.it" target="_blank">Cybrary - Free Online Cybersecurity Courses</a></li>
+    <li><a href="https://tryhackme.com" target="_blank">TryHackMe - Practical Security Labs</a></li>
+  </ul>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email us at <a href="mailto:cyberclub@kluniversity.edu.in">cyberclub@kluniversity.edu.in</a></p>
-    <p>Follow us on <a href="#">Instagram</a> | <a href="#">LinkedIn</a></p>
-  </section>
+<section id="hash">
+  <h2>Hash Generator</h2>
+  <div class="hash-checker">
+    <label for="inputValue">Enter text to generate SHA-256 hash:</label><br>
+    <input type="text" id="inputValue" placeholder="Enter your string here">
+    <button onclick="generateHash()">Generate Hash</button>
+    <div class="result" id="hashResult"></div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 KL University Cyber Security Club
-  </footer>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:cyberclub@kluniversity.edu.in">cyberclub@kluniversity.edu.in</a></p>
+  <p>Follow us:
+    <a href="https://www.instagram.com/klu_sac/" target="_blank">Instagram</a>,
+    <a href="https://www.linkedin.com/company/klu-sac/" target="_blank">LinkedIn</a>
+  </p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Cyber Security Club, KL University</p>
+</footer>
+
+<script>
+  async function generateHash() {
+    const input = document.getElementById('inputValue').value;
+    const encoder = new TextEncoder();
+    const data = encoder.encode(input);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    document.getElementById('hashResult').innerText = hashHex;
+  }
+</script>
+
 </body>
-</html>"""
+</html>
+"""
 
-# Save updated HTML to file
+# Save this updated HTML file and zip it for the user
 updated_html_path = "/mnt/data/index.html"
 with open(updated_html_path, "w") as file:
-    file.write(updated_html_content)
+    file.write(updated_html_with_hash_checker)
 
 # Zip the file
-zip_path_updated = "/mnt/data/kl-cyber-club-updated.zip"
-with ZipFile(zip_path_updated, 'w') as zipf:
+zip_path_updated_hash = "/mnt/data/klu-cyberclub-hash-tool.zip"
+with ZipFile(zip_path_updated_hash, 'w') as zipf:
     zipf.write(updated_html_path, arcname="index.html")
 
-zip_path_updated
+zip_path_updated_hash
